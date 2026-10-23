@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+
+
+{% block page_title %}Our design{% endblock page_title %}
+
+{% block content %}
+    {% for design in designs_list %}
+        <div class="card"
+             style="width: 70%;text-align: center;margin: 1%;border: 1px dotted goldenrod;
+             position: relative;top: -610px;left: 175px;height: 130px">
+            <h5>{{ design.title }}</h5>
+            <h6>created by: {{ design.author }}</h6>
+            <p>{{ design.description }}</p>
+            <a href="{% url 'detail_design' design.id %}">
+                <button type="submit" class="b-read-more">read more</button>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock content %}
